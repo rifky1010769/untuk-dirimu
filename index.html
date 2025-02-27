@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat untuk dirimu</title>
+    <style>
+        body {
+            background-color: #FFB6C1; /* Latar belakang pink muda */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            color: black; /* Teks berwarna hitam */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Pusatkan konten secara horizontal */
+        }
+
+        #surat {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: white; /* Latar belakang surat putih */
+            color: black; /* Teks surat berwarna hitam */
+            display: none; /* Sembunyikan surat pada awalnya */
+            border-radius: 10px;
+            white-space: pre-wrap; /* Mempertahankan spasi dan baris baru */
+            overflow: hidden; /* Sembunyikan teks yang tidak terlihat */
+        }
+
+        #audio-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px; /* Jarak atas untuk audio */
+        }
+
+        #band-image {
+            width: 100%; /* Ukuran gambar band 100% dari kontainer */
+            max-width: 300px; /* Maksimal lebar gambar */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        #love-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: pink; /* Warna tombol */
+            color: black; /* Teks tombol berwarna hitam */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* Sembunyikan tombol pada awalnya */
+        }
+
+        #love-button:hover {
+            background-color: #ff69b4; /* Warna tombol saat hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat Pagi Nailaa </h1>
+    <div id="audio-container">
+        <img id="band-image" src="c:/Users/Hype GLK/Downloads/WhatsApp Image 2025-02-27 at 20.24.12_5a7fc958.jpg" alt="Band Image"> <!-- Ganti dengan gambar band Anda -->
+        <audio id="audio" controls>
+            <source src="c:\Users\Hype GLK\Downloads\WhatsApp Audio 2025-02-27 at 22.42.46_c680451e.mp3" type="audio/mpeg"> <!-- Ganti dengan nama file lagu Anda -->
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <button id="love-button">💖 Buka Surat </button> <!-- Tombol untuk membuka surat -->
+    <div id="surat"></div> <!-- Surat akan ditampilkan di sini -->
+    
+    <script>
+        const suratText = `
+Selamat pagi, Naila. 
+
+Maaf sebelumnya saya mengganggu waktu dirimu.
+
+Saya cuma mau menyampaikan pesan aja.. selamat pagi Naila.
+Semoga hari mu ini bisa menjadi lebih baik dari sebelumnya yaaa..
+Tauu gasii kalau ada yang suka memperhatikan mu dari kejauhan.
+
+"Naila, kamu itu punya aura yang beda. 
+Bukan cuma karena kamu cantik, bukan karena manis senyummu, tapi ada sesuatu dalam caramu membawa diri, cara kamu tersenyum, berbicara, dan memperlakukan orang lain. Rasanya selalu ada ketenangan dan kehangatan di dekatmu. Jujur, aku kagum sama caramu melihat dunia, dan hal-hal kecil yang kamu sukai.
+
+Kamu itu sungguh sangat istimewa dibandingkan orang lain yang mengenalku.
+
+Kalau kamu mau ada cerita, aku mau ko dengerin apa yang mau kamu ceritainn, chat ajaa gapapaa koo
+Saya sangat menghargai dirimu kokkk.
+
+Aku akan selalu mendukungmu dan mensupport diri mu Koo tetap semangat yaaa.
+
+You are my favorite person.🤍🤍
+
+        `;
+
+        document.getElementById('audio').addEventListener('play', function() {
+            document.getElementById('love-button').style.display = 'block'; // Tampilkan tombol saat audio diputar
+        });
+
+        document.getElementById('love-button').addEventListener('click', function() {
+            typeWriter(suratText, 0); // Mulai efek ketikan saat tombol diklik
+        });
+
+        function typeWriter(text, i) {
+            document.getElementById('surat').style.display = 'block'; // Tampilkan surat
+            if (i < text.length) {
+                document.getElementById('surat').innerHTML += text.charAt(i); // Tambahkan karakter satu per satu
+                setTimeout(() => typeWriter(text, i + 1), 100); // Panggil fungsi lagi setelah 100ms
+            }
+        }
+    </script>
+</body>
+</html ```html
+>
